@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with iDontEvenHouses.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.lukke100.iDontEvenHouses;
+package com.lukke100.ideh;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -24,7 +24,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  * @author lukke
  *
  */
-public class Plugin extends JavaPlugin {
+public class IDEH extends JavaPlugin {
 	
 	/* (non-Javadoc)
 	 * @see org.bukkit.plugin.java.JavaPlugin#onEnable()
@@ -33,6 +33,8 @@ public class Plugin extends JavaPlugin {
 	public void onEnable() {
 		// TODO Auto-generated method stub
 		super.onEnable();
+		PathGen path = new PathGen(this.getServer().getWorld("world"));
+		path.runTaskTimer(this, 0, 1);
 	}
 	
 	/* (non-Javadoc)
